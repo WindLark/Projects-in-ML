@@ -1,0 +1,28 @@
+For the data collection step, we have decided on two datasets of different sizes, inspired by smaller scale vision projects
+such as https://publicprompts.art/app-icons-generator-v1-dreambooth-model/ where the author claims to have trained a pretrained
+model on an extremely small dataset (170 images of app icons, according to https://www.reddit.com/r/StableDiffusion/comments/y5rfff/app_icon_generator_v1_people_liked_the_pixel_art/). Our interest has now to developed to be in seeing if a sufficiently robust pretrained model can handle criterion for more niche requests with minimal training data to use, and seeing if the observed ability or inability to handle them is consistent or inconsistent across different platforms. 
+
+We pivot away from looking at UI elements in general as we believe this problem is too broad for the scope of the project (are we looking to model a task bar? icons for a help menu? make a wireframe? etc...), and by extension makes it hard to specify the kind of dataset we want to use.  By choosing to work with app icons specifically we are able to make the problem more concrete and ask the question of "What are the resources required to create a good app button that would fit in a square shpae?"
+
+We choose to look at the following datasets that meet this criterion:
+
+https://www.kaggle.com/datasets/testdotai/common-mobile-web-app-icons
+153,000 Black and white icons gathered for classification, consisting of mostly 200x200 black and white images as well as a negative category consisting of various images (i.e. a non-square picture of someone's dog) that are considered not icons. This was our starting point for a new dataset, but the author notes there are misclassified entries in each category, which might require a lot of manual review to deal with given the size of the dataset.
+
+https://www.kaggle.com/datasets/colinmorris/favicons 
+Consists of 16x16, 32x32, and 48x48 .ico colored image files corresponding to website icons - these would all need to be resized to a consistent size (possibly 96x96 for smooth scaling, though it could be possible to compress icons down to one uniform size). There exists a long tail of icons that are unusual proportions such as 81x33 that would likely need to be filtered out of this dataset as many of these likely reflect poor or nonconventional design choices based on the author's comments.
+
+https://www.kaggle.com/datasets/danhendrycks/icons50
+10,000 icon of 50 different classes representing icons used for buttons in popular tech company platforms (Microsoft, Apple, etc...).
+All icons are 3x32x32 and general inspection suggests icons are properly labeled due to the data set collector taking advantage of
+the naming schemes associated with emoji files. (E.g. "apple_2_angry_face.png" for "emotion face" label). While it deviates from our
+intended problem slightly by focusing on emoji as opposed to more convention icons or buttons it is also the most well organized dataset 
+of the three, which makes it easier for us to test "smaller problems" by taking specific group of emojis to train on.
+
+
+We also hold onto the "anime face" datasets (https://www.kaggle.com/datasets/splcher/animefacedataset and https://www.kaggle.com/datasets/soumikrakshit/anime-faces) as different problem we could test if time permits. Anime faces are a similar
+problem to apps in that many anime faces use generally similar designs and aesthetics due to being part of the same genre of animation; additionally, previous research has shown that much like real people datasets image networks can be trained on the designs by cropping to a box that features only the face and hair. This is a similar enough problmem to the proprosed app icons problem while having enough different visual features to try it as a different problem and observe if a robust pretrained modern vision model's ability/inability to handle small datasets is consistent up across different problems.
+
+Unfortunately due to the aforementioned Google Colab limitation issue causing problems with the homework we have yet to go to the modelling stage. To start the modelling start, we plan to pull Stable Diffusion from Hugging Face (https://huggingface.co/CompVis/stable-diffusion) and learn how to use it by studying comparable implementations like https://github.com/woctezuma/stable-diffusion-colab (a bare bones implementation meant to teach the bare basics) and https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/stable_diffusion.ipynb (an implementation that demonstrates the pretrained pipeline and generator syntax).
+
+The next steps would be to preprocess the data sets we have selected and train a version of Stable Diffusion on each dataset. Similar to Homework 5 Task 2, our goal would be to train the model to a point where it is capable of generating images that roughly resemble the dataset, but for a specific 
