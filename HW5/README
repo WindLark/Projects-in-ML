@@ -8,7 +8,11 @@ I capped the ResNet model for task 1 part 3 at running for 10 epochs and have co
 affected my ability to do some of the homework in general and I spent more time focusing on just getting models implemented
 before usage restrictions limited my ability to complete the excercises in a reasonable time.
 
-Because Task 2 features four relatively similar notebooks a short description has been provided in this README instead.
+Because Task 2 features four relatively similar notebooks a short description has been provided in this README instead. 
+Task 2 code attribution is primarily given to https://www.tensorflow.org/tutorials/generative/cvae and https://www.tensorflow.org/tutorials/generative/dcgan which 
+were the resources we were provided to complete the assignment. This repository includes a straightforward implementation of the tutorial for fashionMNIST,
+and then a modified approach that attempts to implement a version that handles CIFAR but needs parameter adjustment and more training time.
+
 Additional Resources for Task 2:
 https://pytorch.org/vision/stable/generated/torchvision.datasets.FashionMNIST.html
 https://www.tensorflow.org/tutorials/keras/classification
