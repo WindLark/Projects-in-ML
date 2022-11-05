@@ -1,1 +1,30 @@
 This directory is specifically for HW5.
+
+
+Notes:
+Google Colab has recently implemented stricter limits on GPU usage, which limited my ability to perform a more resource intensive
+run with a large augmented dataset in Task 1 combined with ResNet. In order to obtain meaningful results with a reasonable span of time
+I capped the ResNet model for task 1 part 3 at running for 10 epochs and have commented on this accordingly. This also
+affected my ability to do some of the homework in general and I spent more time focusing on just getting models implemented
+before usage restrictions limited my ability to complete the excercises in a reasonable time.
+
+Because Task 2 features four relatively similar notebooks a short description has been provided in this README instead.
+Additional Resources for Task 2:
+https://pytorch.org/vision/stable/generated/torchvision.datasets.FashionMNIST.html
+https://www.tensorflow.org/tutorials/keras/classification
+https://www.tensorflow.org/datasets/catalog/cifar10
+https://www.cs.toronto.edu/~kriz/cifar.html
+https://github.com/zalandoresearch/fashion-mnist
+
+For task 2 I did the tutorials provided by Professor Uzma twice:
+
+The first time I did a straightfoward implementation of the tutorials Professor Uzma provided with fashionMNIST to try and get a
+better understanding of how to implement VAE in Tensorflow syntax, and then
+tried to repeat the task using the CIFAR dataset to try and see if I could adjust the model and dataset properly
+to make a VAE and GAN model on a dataset that did not have similar parameters to MNIST. Due to limited experience with
+Tensorflow (my current focus has been on Pytorch as shown in the assignments) I focused mainly on making
+modifications to the parameters and functions to ensure the model would run and generate images. 
+My CIFAR results are not particularly accurate by qualitative standards;  there is inprovement from generic blurs, but   
+it would likely need much more training and parameter adjustment 
+I wanted to provide my fashionMNIST attempt at the tutorial to show that 
+I have a general understanding of what the intended output of the VAE and GAN should look like.
