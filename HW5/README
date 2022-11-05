@@ -5,7 +5,7 @@ Notes:
 Google Colab has recently implemented stricter limits on GPU usage, which limited my ability to perform a more resource intensive
 run with a large augmented dataset in Task 1 combined with ResNet. In order to obtain meaningful results with a reasonable span of time
 I capped the ResNet model for task 1 part 3 at running for 10 epochs and have commented on this accordingly. This also
-affected my ability to do some of the homework in general and I spent more time focusing on just getting models implemented
+affected my ability to do the later parts of the homework in general and I spent more time focusing on just getting models implemented
 before usage restrictions limited my ability to complete the excercises in a reasonable time.
 
 Because Task 2 features four relatively similar notebooks a short description has been provided in this README instead. 
