@@ -1,3 +1,5 @@
+## Presentation Report
+
 https://paperswithcode.com/dataset/ui5k
 
 My initial research consisted of reviewing and briefly experimenting with the unlabeled mobile screenshot dataset shown above. I decided to reject this and similar datasets for the purposes of the project as its scope was too broad - there are many different types of user interface screenshots and my goal was to train a model in a manner such that someone such as a web designer could explicitly prototype a specific icon or detail that they wanted, such as a search bar or an app icon featuring a computer.
@@ -10,7 +12,8 @@ Currently I have an embedding that has been trained up to 3000 epochs with the r
 
 The end goal is to have trained 2-3 word embeddings, each from a different dataset or subset of one dataset, and determine how capable StableDiffusion is at using these word embeddings in conjunction with other word embeddings from a txt2img prompt. As our current embedding is not particularly successful in this regard I hope to train on different datasets with different parameters to determine an optimal approach.
 
-Additional Resources:
+## Additional Resources:
+  
 https://huggingface.co/blog/stable_diffusion
 https://huggingface.co/blog/annotated-diffusion
 The blog posts that were primarily references as part of my research (as well as their included notebooks).
