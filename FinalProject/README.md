@@ -1,13 +1,13 @@
-This is for the final project of Projects in ML. 
+# Important Files and Links
 
-Report for 12/6/2022 is included at Report.md
+The Report for 12/6/2022 is included at Report.md
 
 The Final Report and Code are all included in the Notebook "Final_Project_Textual_Embeddings_for_Specific_Use_Cases_of_Diffusion_Models.ipynb". Due to the notebook's size there may be display issues - [in that case, the Notebook can be viewed at this link](https://colab.research.google.com/drive/1swJf1dqd_cgkXV3CqVK5mEgXLrVTY3CE?usp=sharing).
 
 [Google Slides Presentation Link](https://docs.google.com/presentation/d/1HBJzE3sBF__nWo_nvdz2x2-s_ws9i6HC/edit?usp=sharing&ouid=108357174084582086995&rtpof=true&sd=true)
 
 
-#Introduction
+# Introduction
 
 The recent developments in image generation models like Dall-E, MidJourney, and StableDiffusion have led to people exploring if they can be used for purposes such as generating prototype UI components and concept art for fictional characters. However, there are limitations to a model that has not been trained beyond its base configuration. As seen in Figure 1, a model might generate extraneous, incorrect, or unhelpful features that may not fit a user's intended use case (in this case, generating a mockup of a website UI). The result is that a user may waste additional time trying to find a suitable prompt to have the AI model generate their desired content, or give up on using the model entirely. We attempt to train a text embeddings for individual UI components and concepts a user might specifically want to see in Stable Diffusion to determine whether it would be possible to generate a modular series of components that could be added or removed in prototyping a website as needed.
 
@@ -21,7 +21,7 @@ For my final project, I attempted to implement and train a Stable Diffusion mode
 
 The report portion of this colab notebook will primarily be split into sections that comment on each step of the process. This consists of a segment at the beginning that covers the research done in selecting the model and selecting/processing the dataset, indiviudal sections to comment on specific aspects of Stable Diffusion I learned while attempting this implementation, and a closing section after the code that demonstrates and discusses the results, issues, and next steps such a project could take.
 
-#Model and Dataset Research
+# Model and Dataset Research
 
 A recurring problem in previous approaches to the txt2img and image generation problems primarily motivated by GANs was having to deal with complex networks or flawed generations with a large number of image artifacts [1]. Without additional implementations to guide it on a specific topic, GANs struggled to capture context specific information such as limb segmentation and even more general problems such as separating foreground and background objects from each other. As a result, GAN based models could not generalize well and a new implementation had to be built for each specific problem.
 
@@ -39,7 +39,7 @@ This transformer based architecture is reliant on using text embeddings to gener
 
 One other notable aspect of Stable Diffusion observed by Rombach et. al is that becuause the Unet is biased towards denoising an image with similar relevant context (aka inductive bias), this lets Stable Diffusion use more 2D convolution layers (which are less comutationallty intensive) as opposed to transformers [3].
 
-#References
+# References
 
 1) Ramesh A, Pavlov M, Goh G, Gray S, Voss C, Radford A, Chen M, Sutskever I. Zero-shot text-to-image generation. InInternational Conference on Machine Learning 2021 Jul 1 (pp. 8821-8831). PMLR.
 
