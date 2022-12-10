@@ -1,4 +1,4 @@
-This is for the final project of Projects in ML. More detailed description will be provided later. 
+This is for the final project of Projects in ML. 
 
 Report for 12/6/2022 is included at Report.md
 
